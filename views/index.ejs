@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+     <script data-main="./conf" src = "./javascripts/require-jquery.js"></script>
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div id="msg">
+
+     </div>
+    <div id="log_form">
+   <h2>Login</h2>
+
+   User Name: <input type="text" name="u_name" id="u_name"><br>
+   Password : <input type="password" name="pass" id="pass"><br>
+
+   <button type="button" id="login">Login<button type="button" id="signup">sign up</button>
+  </div>
+
+
+ <div id="reg_form">
+<h2>Register</h2>
+<form>
+<table>
+<tr>
+  <td> User Name:</td><td id="td_un"> <input type="text" name="u_name" id="u_namer" ></td>
+</tr>
+<tr>
+   <td>Email :</td><td id="td_em"> <input type="email" name="email" id="email" ></td>
+</tr>
+<tr>
+   <td>Password :</td><td id="td_p"> <input type="password" name="pass" id="passr" ></td>
+</tr>
+<tr>
+   <td>Re-Password :</td><td id="td_rp"> <input type="password" name="re_pass" id="re_pass"></td>
+</tr>
+<tr>
+   <td>Age :</td><td> <input type="text" name="age" id="age" ></td>
+</tr>
+<tr>
+   <td><button  id="reg" type="button">Register</button></td><td></td>
+</tr>
+</table>
+</form>
+
+
+ </div>
+
+
+
+  </body>
+</html>
