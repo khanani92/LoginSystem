@@ -5,3 +5,7 @@
  * Time: 7:25 PM
  * To change this template use File | Settings | File Templates.
  */
+define("loginForm",function(){
+    var a = 20;
+    return a;
+});
