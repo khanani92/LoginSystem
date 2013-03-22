@@ -55,10 +55,15 @@ exports.regStudent = function(req,res){
 //Login request dealing
 
 exports.login = function(req,res){
-
+    var u_name = req.body.u_name;
+    var pass = req.body.pass;
+    console.log(u_name);
+    console.log(pass);
 
     res.send("done");
 }
+
+
 
 
 

@@ -22,6 +22,13 @@ $(function(){
            regfunc();
         });
     });
+    $('#login').on('click',function(){
+        require(["loginfunc"], function(regfunc){
+//            alert(regfunc);
+            console.log('regfunct is called to check field');
+            regfunc();
+        });
+    });
     /*
      $("#btn1").on('click',function(){
         require(["personName"], function(name){
@@ -29,16 +36,6 @@ $(function(){
         });
     });
 
-    $("#btn2").on('click',function(){
-        require(["personAge"], function(personAge){
-            $('body').append('<br><b>Age:</b> '+personAge.age+'<br>');
-        });
-    });
 
-    $("#btn3").on('click',function(){
-        require(["personCourse"], function(personCourse){
-            $('body').append('<br><b>Course:</b> '+personCourse.course+'<br>');
-        });
-    });
     */
 });
