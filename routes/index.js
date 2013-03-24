@@ -34,7 +34,7 @@ exports.regStudent = function(req,res){
     console.log(email);
     console.log(pass);
 
-    /*var stu = new Student(
+    var stu = new Student(
         {
         name:u_name,
         email:email,
@@ -48,7 +48,7 @@ exports.regStudent = function(req,res){
             res.send("Registrated"+data);
         }
     });
-       */
+
 
 }//regStudent
 
@@ -57,8 +57,19 @@ exports.regStudent = function(req,res){
 exports.login = function(req,res){
     var u_name = req.body.u_name;
     var pass = req.body.pass;
-    console.log(u_name);
-    console.log(pass);
+    //console.log(u_name);
+  //  console.log(pass);
+
+    Student.find({ name: u_name, pass: pass },function(err,data){
+        if(err){
+            console.log("error"+err);
+            res.send(JSON.stringify(data));
+        }else{
+            console.log(data);
+        }
+    });
+
+
 
     res.send("done");
 }

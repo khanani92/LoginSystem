@@ -19,8 +19,22 @@ define("loginfunc",function (){
             url:"/login",
             data:{u_name:u_name,pass:pass},
             type:"post"
-        }).done(function(res){
-                console.log("test"+res)
+
+        }).done(function(res,status){
+                console.log("test"+res);
+                //alert(res);
+                alert(status);
+                if(status == "success"){
+                    $.ajax({
+                        url:"/login",
+                        type:"post"
+                    }).done(function(resp){
+                    var u_data = JSON.parse(resp)
+                    alert(u_data.pass);
+                })  ;
+
+            };//if resp==sucess
+
             });//ajax done
     } ;
 
