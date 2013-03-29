@@ -5,6 +5,7 @@
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/Sirsyed');
+//var q = require('q');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -57,15 +58,18 @@ exports.regStudent = function(req,res){
 exports.login = function(req,res){
     var u_name = req.body.u_name;
     var pass = req.body.pass;
-    //console.log(u_name);
+  //  console.log(u_name);
   //  console.log(pass);
 
-    Student.find({ name: u_name, pass: pass },function(err,data){
+    Student.findOne({ name: u_name, pass: pass },function(err,data){
         if(err){
             console.log("error"+err);
-            res.send(JSON.stringify(data));
+
+
         }else{
             console.log(data);
+            res.send(data);
+
         }
     });
 

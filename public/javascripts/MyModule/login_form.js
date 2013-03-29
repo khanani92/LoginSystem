@@ -20,18 +20,14 @@ define("loginfunc",function (){
             data:{u_name:u_name,pass:pass},
             type:"post"
 
-        }).done(function(res,status){
+        }).done(function(res,status,data){
                 console.log("test"+res);
                 //alert(res);
                 alert(status);
                 if(status == "success"){
-                    $.ajax({
-                        url:"/login",
-                        type:"post"
-                    }).done(function(resp){
-                    var u_data = JSON.parse(resp)
-                    alert(u_data.pass);
-                })  ;
+
+
+                    console.log(data)
 
             };//if resp==sucess
 
