@@ -2,23 +2,39 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-
-     <script data-main="./conf" src = "./javascripts/require-jquery.js"></script>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap-responsive.min.css' />
+    <script src="./javascripts/bootstrap.min"></script>
+    <script data-main="./conf" src = "./javascripts/require-jquery.js"></script>
 
   </head>
   <body>
+  <div class="container">
+  <div class="span4">...</div>
+   <div class="span4">
     <h1><%= title %></h1>
+    <small>Using Node.js, HTML5, MongoDB, Bootstrape,Require.JS</small>
+    <hr>
     <div id="msg">
               <button id="logout" style="visibility :hidden;">LogOut</button>
      </div>
     <div id="log_form">
    <h2>Login</h2>
 
-   User Name: <input type="text" name="u_name" id="u_name"><br>
-   Password : <input type="password" name="pass" id="pass"><br>
+    <div class="control-group">
+        <label class="control-label" for="u_name">User Name</label>
+        <div class="controls">
+          <input type="text" id="u_name" placeholder="User Name">
+        </div>
+      </div>
+    <div class="control-group">
+        <label class="control-label" for="pass">Password</label>
+        <div class="controls">
+          <input type="text" id="pass" placeholder="Password">
+        </div>
+      </div>
 
-   <button type="button" id="login">Login<button type="button" id="signup">sign up</button>
+   <button type="button" id="login" class="btn">Login<button type="button" id="signup" class="btn">sign up</button>
   </div>
 
 
@@ -49,8 +65,8 @@
 
 
  </div>
-
-
+      </div><!--span for 4-->
+ </div>
 
   </body>
 </html>
