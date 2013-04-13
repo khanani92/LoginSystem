@@ -8,13 +8,16 @@
 
 
 $(function(){
-    $('#reg_form').hide();
-    $('#signup').on("click",function(){
-
-        $('#log_form').hide();
-        $('#reg_form').show();
+    //Main js for index in start
+    require(["mainFunt"], function(mainfunt){
+//            alert(regfunc);
+        console.log('mainfunct is called as main js for /');
+        mainfunt();
     });
 
+
+
+      //registion function
     $('#reg').on('click',function(){
         require(["regForm"], function(regfunc){
 //            alert(regfunc);
@@ -22,13 +25,30 @@ $(function(){
            regfunc();
         });
     });
+
+
+
+    //Login function
     $('#login').on('click',function(){
-        require(["loginfunc"], function(regfunc){
+        require(["loginfunc"], function(loginFunc){
 //            alert(regfunc);
-            console.log('regfunct is called to check field');
-            regfunc();
+            console.log('loginfunct is called to check field');
+            loginFunc();
         });
     });
+
+    //Logout function
+    $('#logout').on('click',function(){
+        //alert("hello");
+        require(["logoutfunt"], function(logoutFunc){
+//            alert(regfunc);
+            console.log('logoutfunct is called logOut');
+            logoutFunc();
+        });
+    });
+
+
+
     /*
      $("#btn1").on('click',function(){
         require(["personName"], function(name){

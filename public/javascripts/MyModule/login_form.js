@@ -15,23 +15,41 @@ define("loginfunc",function (){
         console.log(u_name);
         console.log(pass);
 
-        $.ajax({
+          $.ajax({
             url:"/login",
             data:{u_name:u_name,pass:pass},
             type:"post"
 
-        }).done(function(res,status,data){
-                console.log("test"+res);
-                //alert(res);
-                alert(status);
-                if(status == "success"){
+        }).done(function(data, textStatus, jqXHR){
+                //alert(textStatus);// succes
+                //alert(jqXHR.status);// 200
+                //alert(jqXHR.statusText);// ok
+                  //alert(data);
 
+                if(data != 'error'){
+                    $('#log_form').hide();
+                    $('#msg').append("<h4>Welcome"+data.name +"</h4>");
 
                     console.log(data)
+                    var u_id =  data._id;
+                    sessionStorage.setItem('id',u_id);
 
-            };//if resp==sucess
+                    location.reload();
+
+                    //alert(data.email);
+
+
+            }else{//if resp==sucess
+                   if(data === 'error'){
+                       $('#log_form').append("<p>User Name or passward is wrong</p>");
+                       alert("error");
+
+                   }
+                    //alert("asas");
+                }
 
             });//ajax done
+
     } ;
 
     return loginFunc;

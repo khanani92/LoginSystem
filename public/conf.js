@@ -13,8 +13,10 @@ require.config({
 
     paths: {
         // JavaScript folders.
+        mainFunt: "javascripts/MyModule/main_funt",
         regForm: "javascripts/MyModule/reg_form",
         loginfunc: "javascripts/MyModule/login_form",
+        logoutfunt: "javascripts/MyModule/logout_funt",
        // personCourse: "JavaScript/MyModule/course",
        // personClassNo: "JavaScript/MyModule/classNo",
 
